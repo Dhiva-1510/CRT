@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+      <h2 id = "wins"></h2>
+      <div class="dice">
+        <p>Player 1</p>
+        <img id="dice1" class="img1" src="images/dice6.png" />
+      </div>
+      
+      <div class="dice">
+        <p>Player 2</p>
+        <img id="dice2" class="img2" src="images/dice6.png" />
+      </div>
+    </div>
+
+    <footer>www 🎲 App Brewery 🎲 com</footer>
+
+    <script>
+      let n = Math.floor(Math.random()* 6)+1;
+      let m = Math.floor(Math.random()* 6)+1;
+      if(n>m)
+        document.getElementById("wins").innerText = "Player 1 wins";
+      else if(m>n)
+        document.getElementById("wins").innerText = "Player 2 wins";
+      else
+        document.getElementById("wins").innerText = "Match Draw";
+      let d1 = document.getElementById("dice1");
+      let d2 = document.getElementById("dice2");
+      d1.setAttribute("src","images/dice"+n+".png");
+      d2.setAttribute("src","images/dice"+m+".png");
+    </script>
+
+  </body>
+</html>
